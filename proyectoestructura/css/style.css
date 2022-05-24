@@ -1,0 +1,164 @@
+*{
+ margin: 0;
+ padding: 0%;
+ text-align: center;   
+}
+html
+{
+    height: 100%;
+}
+body
+{
+    min-height:100% ;
+    background-color: black;
+}
+.header
+{
+    grid-area: header;
+    background: rgb(131, 22, 22);
+}
+.header li
+{
+    list-style: none;
+    display: inline-grid;
+    margin-right: 3%;
+    margin-top: 1%;
+    background-color: rgb(255, 248, 248);
+    border-radius: 5px;
+    width: 8%;   
+}
+.header li a 
+{
+    color: rgb(0, 0, 0);
+    font-family: fantasy;
+    text-shadow: rgb(197, 165, 248);
+    text-decoration-line: none;
+}
+.header li a:hover
+{
+    color: rgb(219, 190, 190);
+}
+.header li:hover
+{
+    background:linear-gradient(to right, rgb(131, 22, 22), rgb(243, 220, 170));
+    z-index: 3;
+    width: auto;
+}
+.header ul
+{
+    z-index: -4;
+}
+#subseccion5, #subseccion6, #subseccion7
+{
+    background-color: rgba(141, 27, 27, 0);
+    width: 90%;
+    display: none;
+    border-radius: 7px;
+    z-index: 2;
+   
+}
+.navbar
+{
+    grid-area: navbar;
+    background: rgb(131, 22, 22);
+}
+.sidebar
+{
+    grid-area: sidebar;
+    background: rgb(131, 22, 22);
+}
+.footer
+{
+    grid-area: footer;
+    background: rgb(131, 22, 22);
+}
+
+.main
+{
+    grid-area: main;
+    background: rgb(131, 22, 22);
+    background-image: url("../img/death-note-death-note-anime-wallpaper-preview.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center ;
+    text-align: center;
+    background-size: 100%;
+    z-index: -1;
+}
+.grid-container
+{
+    display: grid;
+    gap: 40px;
+    grid-template: 
+    "header" 50px
+    "navbar" 50px
+    "sidebar" 50px
+    "main" auto
+    "footer" 50px;
+}
+.grid-container > *
+{
+    box-shadow:-1px 1px 7px 0px white;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+@media(min-width: 600px){
+    .grid-container
+    {
+        grid-template:
+        "header header" 100px
+        "navbar navbar" 100px
+        "sidebar main" auto
+        "footer footer" 100px /
+        200px auto;
+    }
+    #contenedor{
+        display: none;
+    }
+    #imagenlateral{
+        display: none;
+       }
+}
+@media(min-width: 150px) and (max-width: 599px )
+{
+    .header li
+    {
+       display: none;
+    }
+    #imagenlateral
+    {
+        display: block;
+        width: 7%;
+        height: 7%;
+        margin-right: 90%;
+        border-radius: 5%;
+    }
+}
+@media(min-width: 900px){
+    .grid-container
+    {
+        grid-template:
+        "header header header" 100px
+        "navbar main sidebar" auto
+        "footer footer footer" 100px /
+        200px auto 200px;
+    }
+    #imagenlateral{
+     display: none;
+    }
+ 
+}
+#menulateral
+{
+    position:absolute;
+    margin-top: 0%;
+    left: 0%;
+    width: 30%;
+    height: 50%;
+    border-radius: 3%;
+    background-color: rgb(243, 220, 170);
+    display: none;
+}
+
